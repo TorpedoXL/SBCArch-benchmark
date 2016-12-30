@@ -5,7 +5,7 @@
 # Install dependencies
 if [ ! `which packer` ]; then
   pacman -S packer
-  
+fi  
 if [ ! `which hdparm` ]; then
   packer -S hdparm
 fi
