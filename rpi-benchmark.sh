@@ -4,21 +4,21 @@
 
 # Install dependencies
 if [ ! `which hdparm` ]; then
-  apt-get install -y hdparm
+  pacman -S hdparm
 fi
 if [ ! `which sysbench` ]; then
-  apt-get install -y sysbench
+  pacman -S sysbench
 fi
 if [ ! `which speedtest-cli` ]; then
-  apt-get install -y speedtest-cli
+  pacman -S speedtest-cli
 fi
 
 # Script start!
 clear
 sync
-echo -e "\e[96mRaspberry Pi Benchmark Test"
-echo -e "Author: AikonCWD"
-echo -e "Version: 3.0\n\e[97m"
+echo -e "\e[96mSBC With Arch Linux ARM Benchmark Test"
+echo -e "Author: AikonCWD, TorpedoXL"
+echo -e "Version: 3.1\n\e[97m"
 
 # Show current hardware
 vcgencmd measure_temp
@@ -65,4 +65,4 @@ vcgencmd measure_temp
 rm -f ~/test.tmp
 echo -e "\e[0m"
 
-echo -e "\e[91mAikonCWD's rpi-benchmark completed!\e[0m\n"
+echo -e "\e[91mBenchmark completed!\e[0m\n"
