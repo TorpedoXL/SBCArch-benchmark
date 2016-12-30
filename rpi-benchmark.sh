@@ -3,14 +3,17 @@
 [ "$(whoami)" == "root" ] || { echo "Must be run as sudo!"; exit 1; }
 
 # Install dependencies
+if [ ! `which packer` ]; then
+  pacman -S packer
+  
 if [ ! `which hdparm` ]; then
-  pacman -S hdparm
+  packer -S hdparm
 fi
 if [ ! `which sysbench` ]; then
-  pacman -S sysbench
+  packer -S sysbench
 fi
 if [ ! `which speedtest-cli` ]; then
-  pacman -S speedtest-cli
+  packer -S speedtest-cli
 fi
 
 # Script start!
